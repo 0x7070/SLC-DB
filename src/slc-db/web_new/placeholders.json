@@ -1,0 +1,8 @@
+{
+  "barcode": "Scan or type the barcode",
+  "name": "Name of the film roll",
+  "brand": "Brand of the film",
+  "film_type": "Security, Decorative, etc.",
+  "weight": "Weight in lbs",
+  "notes": "Any notes for this roll"
+}

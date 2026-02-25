@@ -1,0 +1,30 @@
+/* Popup */
+#popup {
+  position: fixed;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: top 0.5s ease;
+  z-index: 1000;
+}
+#popup.show {
+  top: 10px;
+}
+
+/* Duplicate box */
+.duplicate-box {
+  border: 2px solid #e74c3c;
+  padding: 10px;
+  background: #fdecea;
+  margin-top: 20px;
+}
+
+/* Highlight search */
+mark {
+  background-color: yellow;
+  color: black;
+}

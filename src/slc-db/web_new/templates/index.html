@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Film Inventory</title>
+<link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+
+<h1>Film Inventory</h1>
+
+<input type="text" id="searchInput" placeholder="Search inventory..." title="Type to search">
+
+<a href="/add">Add Film</a>
+
+<table border="1" id="filmsTable">
+  <thead>
+    <tr>
+      <th>Barcode</th>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Type</th>
+      <th>Weight</th>
+      <th>Date Received</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for film in films %}
+    <tr>
+      <td>{{ film.barcode }}</td>
+      <td>{{ film.name }}</td>
+      <td>{{ film.brand }}</td>
+      <td>{{ film.film_type }}</td>
+      <td>{{ film.weight }}</td>
+      <td>{{ film.date_received }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<script src="/static/main.js"></script>
+</body>
+</html>

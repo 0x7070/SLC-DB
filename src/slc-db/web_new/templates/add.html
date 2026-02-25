@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Film Roll</title>
+<link rel="stylesheet" href="/static/main.css">
+</head>
+<body>
+
+<h1>Add Film Roll</h1>
+
+<!-- Sliding popup -->
+<div id="popup" class="{{ 'show' if error else '' }}">{{ error or '' }}</div>
+
+<form method="POST" id="addForm">
+
+  {% for field in ['barcode','name','brand','film_type','weight','notes'] %}
+    <label>{{ field.capitalize() }}:</label><br>
+    <input 
+        type="text" 
+        name="{{ field }}" 
+        placeholder="{{ placeholders[field] }}" 
+        value="{{ form_data.get(field,'') }}"
+        title="{{ placeholders[field] }}"><br><br>
+  {% endfor %}
+
+  <button type="submit">Save</button>
+</form>
+
+{% if duplicate %}
+<div class="duplicate-box">
+<h3>Duplicate Entry Found:</h3>
+<ul>
+<li>Barcode: {{ duplicate.barcode }}</li>
+<li>Name: {{ duplicate.name }}</li>
+<li>Brand: {{ duplicate.brand }}</li>
+<li>Type: {{ duplicate.film_type }}</li>
+<li>Weight: {{ duplicate.weight }}</li>
+<li>Date Received: {{ duplicate.date_received }}</li>
+<li>Notes: {{ duplicate.notes }}</li>
+</ul>
+</div>
+{% endif %}
+
+<script src="/static/main.js"></script>
+</body>
+</html>
